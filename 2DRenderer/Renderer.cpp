@@ -37,6 +37,10 @@ bool Renderer::Initialize(int width, int height, bool fullscreen)
 	return true;
 }
 
+void Renderer::CopyBuffer(Framebuffer* buffer) {
+	SDL_RenderCopy(renderer, buffer->texture, nullptr, nullptr);
+}
+
 void Renderer::Present() {
 	SDL_RenderPresent(renderer);
 }

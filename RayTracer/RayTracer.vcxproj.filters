@@ -23,10 +23,25 @@
     <ClCompile Include="Image.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="ColorBuffer.cpp">
+    <ClCompile Include="PostProcess.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="PostProcess.cpp">
+    <ClCompile Include="Tracer.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Sphere.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -43,6 +58,33 @@
     <ClInclude Include="ColorBuffer.h">
       <Filter>Sources</Filter>
     </ClInclude>
-    <ClInclude Include="PostProcess.h" />
+    <ClInclude Include="PostProcess.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Tracer.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Sphere.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h" />
   </ItemGroup>
 </Project>

@@ -23,6 +23,18 @@ inline color_t Vec3ToColor(const glm::vec3& vec3)
     return color;
 }
 
+inline glm::vec3 ColorToVec3(const color_t& color)
+{
+    glm::vec3 out_color;
+
+    out_color.r = color.r / 255.0f;
+    out_color.g = color.g / 255.0f;
+    out_color.b = color.b / 255.0f;
+
+    return out_color;
+}
+
+
 inline float dot(const glm::vec3& v1, const glm::vec3& v2) {
     return (v1.x * v2.x + v1.y * v2.y + v1.z * v2.z);
 }
@@ -72,3 +84,26 @@ inline glm::vec3 randomInUnitDisk()
 
     return p;
 }
+
+inline bool refract(const glm::vec3& v, const glm::vec3& n, float refractionIndex, glm::vec3& refracted)
+{
+    glm::vec3 nv = glm::normalize(v);
+    float dt = dot(nv, n);
+    float discriminant = 1 - (refractionIndex * refractionIndex) * (1 - dt * dt);
+    if (discriminant > 0)
+    {
+        refracted = refractionIndex * (nv - (n * dt)) - (n * std::sqrt(discriminant));
+        return true;
+    }
+
+    return false;
+}
+
+inline float schlick(float cosine, float index)
+{
+    float r0 = (1 - index) / (1 + index);
+    r0 = r0 * r0;
+    return (float)(r0 + (1 - r0) * std::pow((1 - cosine), 5));
+}
+
+

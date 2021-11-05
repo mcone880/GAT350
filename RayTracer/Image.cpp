@@ -3,6 +3,10 @@
 #include <iostream>
 
 
+Image::Image(const std::string& filename, uint8_t alpha) {
+    Load(filename, alpha);
+}
+
 bool Image::Load(const std::string& filename, uint8_t alpha) {
     std::ifstream stream(filename, std::ios::binary);
     if (stream.fail()) {

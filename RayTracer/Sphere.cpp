@@ -1,6 +1,6 @@
 #include "Sphere.h"
 
-bool Sphere::Hit(const ray_t& ray, float tMin, float tMax, rayCastHit_t& hit)
+bool Sphere::Hit(const ray_t& ray, float tMin, float tMax, raycastHit_t& hit)
 {
     glm::vec3 oc = ray.origin - center;
     float a = glm::dot(ray.direction, ray.direction);
@@ -23,6 +23,7 @@ bool Sphere::Hit(const ray_t& ray, float tMin, float tMax, rayCastHit_t& hit)
             hit.t = t;
             hit.point = ray.pointAt(hit.t);
             hit.normal = (hit.point - center) / radius;
+            hit.uv = GetSphericalUV(hit.normal);
             hit.material = material.get();
             return true;
         }
@@ -33,6 +34,7 @@ bool Sphere::Hit(const ray_t& ray, float tMin, float tMax, rayCastHit_t& hit)
             hit.t = t;
             hit.point = ray.pointAt(hit.t);
             hit.normal = (hit.point - center) / radius;
+            hit.uv = GetSphericalUV(hit.normal);
             hit.material = material.get();
             return true;
         }

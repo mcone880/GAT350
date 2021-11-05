@@ -1,6 +1,6 @@
 #include "Plane.h"
 
-bool Plane::Hit(const ray_t& r, float tMin, float tMax, rayCastHit_t& hit) {
+bool Plane::Hit(const ray_t& r, float tMin, float tMax, raycastHit_t& hit) {
 	float denominator = dot(r.direction, normal);
 
     if (abs(denominator) < glm::epsilon<float>())
@@ -20,6 +20,7 @@ bool Plane::Hit(const ray_t& r, float tMin, float tMax, rayCastHit_t& hit) {
         hit.t = t;
         hit.point = r.pointAt(t);
         hit.normal = normal;
+        hit.uv = GetPlanarUV(hit.point);
         hit.material = material.get();
 
         return true;
